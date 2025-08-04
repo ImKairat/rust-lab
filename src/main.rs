@@ -2,20 +2,13 @@ mod fourth;
 mod fifth;
 mod sixth;
 mod seventh;
+mod service;
 
-use fourth::tcp::{tcp_server, tcp_client};
-use std::thread;
-
+use fourth::tcp::std::{tcp_client, tcp_server};
 
 fn main() {
-    let client_thread = thread::spawn( || {
-        tcp_client().unwrap();
-    });
-    let server_thread = thread::spawn( || {
-        tcp_server().unwrap();
-    });
-
-    
-    client_thread.join().unwrap();
-    server_thread.join().unwrap();
+    service::run_client_server(
+        tcp_server,
+        tcp_client
+    ).unwrap();
 }

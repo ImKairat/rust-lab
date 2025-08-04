@@ -9,7 +9,7 @@ pub fn tcp_client() -> std::io::Result<()> {
     let socket = "127.0.0.1:7878";
 
     let mut stream = TcpStream::connect(socket)?;
-    stream.write_all(b"\nHello from client!\n")?;
+    stream.write_all(b"\nHello from client!")?;
 
     let mut buf = [0; 512];
     let bytes_read = stream.read(&mut buf)?;
