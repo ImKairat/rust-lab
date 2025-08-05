@@ -1,10 +1,8 @@
 use std::net::TcpStream;
 use std::io::{Read, Write};
 use std::thread;
-use std::time::Duration;
 
 pub fn tcp_client() -> std::io::Result<()> {
-    thread::sleep(Duration::from_millis(1000));
 
     let socket = "127.0.0.1:7878";
 
