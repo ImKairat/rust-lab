@@ -1,10 +1,8 @@
-mod fourth;
-mod fifth;
-mod sixth;
-mod seventh;
+mod transport_layer;
+mod application_layer;
 mod service;
 
-use fourth::tcp::std::{tcp_client, tcp_server};
+use transport_layer::tcp::std::{tcp_client, tcp_server};
 
 fn main() {
     service::run_client_server(
