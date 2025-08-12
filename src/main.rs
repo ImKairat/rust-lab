@@ -1,8 +1,7 @@
-mod transport_layer;
-mod application_layer;
+mod net;
 mod service;
 
-use transport_layer::tcp::std::{tcp_client, tcp_server};
+use net::transport_layer::tcp::std::{tcp_client, tcp_server};
 
 fn main() {
     service::run_client_server(
