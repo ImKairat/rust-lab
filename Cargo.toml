@@ -1,5 +1,5 @@
 [package]
-name = "layers-4to7"
+name = "rust-tcpip-lab"
 version = "0.1.0"
 edition = "2024"
 
