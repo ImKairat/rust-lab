@@ -1,9 +1,8 @@
-use std::net::TcpStream;
 use std::io::{Read, Write};
+use std::net::TcpStream;
 use std::thread;
 
 pub fn tcp_client() -> std::io::Result<()> {
-
     let socket = "127.0.0.1:7878";
 
     let mut stream = TcpStream::connect(socket)?;
@@ -11,7 +10,10 @@ pub fn tcp_client() -> std::io::Result<()> {
 
     let mut buf = [0; 512];
     let bytes_read = stream.read(&mut buf)?;
-    println!("Server response: {}", String::from_utf8_lossy(&buf[..bytes_read]));
+    println!(
+        "Server response: {}",
+        String::from_utf8_lossy(&buf[..bytes_read])
+    );
 
     Ok(())
 }
